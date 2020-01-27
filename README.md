@@ -23,10 +23,25 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+--Context API  helps solve the need for global state management and helps avoid prop drilling. There are some drawbacks and it can limit component reusability and it is best used in smaller applications. For larger applications Redux seems to remain the “top-dog” for global state management.
+
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+–  Actions pass well....actions to the reducer, which the reducer then interprets and modifys the global state of the store in a predictable way .The store is known as the 'single source of truth' because it is state that can be used globally and is changed (thanks to actions/reducers) in predictable ways.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+– Application state is something like “user logged in/out” ect. Something that is used globally while component state is something like controlled forms, where the state is only used in one component.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+--Thunk is a middleware that allows action-creators to return a function. 
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+--Redux will probably be my favorite once I get more accustomed to it. Context seems fine for small applications but Redux seems very powerful and I will forsee myself attempting to do most projects with it to improve (Even though the scale of projects that we work on here at lambda are not ideal or efficient use-cases)
 
 ## Project Set Up
 
