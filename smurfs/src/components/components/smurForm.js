@@ -7,16 +7,16 @@ const SmurForm = ({postSmurfs}) => {
         name: '',
         age: '',
         height: '',
-        id: '',
-    })
-
+        isEditing: false
+    });
+    
     const changeHandler = (e) => {
         setSmurfInput({
             ...smurfInput,
             [e.target.name]: e.target.value
         })
-    }
-
+    }; 
+    
     const submitHandler = (e) => {
         e.preventDefault();
         postSmurfs(smurfInput);
@@ -25,7 +25,8 @@ const SmurForm = ({postSmurfs}) => {
             age: '',
             height: '',
         });
-    }
+    };
+    
 
     return(
         <form onSubmit={submitHandler}>

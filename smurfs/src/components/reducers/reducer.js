@@ -1,7 +1,12 @@
-import { GET_SMURFS, DELETE_SMURF, POST_SMURFS } from '../actions/getSmurfs';
+import { GET_SMURFS, 
+    DELETE_SMURF, 
+    POST_SMURFS, 
+    PUT_SMURF, 
+    TOGGLE_EDIT } from '../actions/getSmurfs';
 
 const initialState = {
-    smurfs: []
+    smurfs: [],
+    
 };
 
 export const reducer = (state = initialState, action) => {
@@ -18,6 +23,25 @@ export const reducer = (state = initialState, action) => {
             return {
                 smurfs: action.payload
             };
+        case PUT_SMURF:
+            console.log('the payload',action.payload)
+            return {
+                smurfs: action.payload
+            };
+            
+        case TOGGLE_EDIT:
+            return {
+                smurfs: state.smurfs.map(smurf => {
+                    if(smurf.id === action.payload.id){
+                        return{
+                            ...smurf,
+                            isEditing: !action.payload.isEditing
+                        } 
+                } else {
+                    return smurf
+                }
+            })
+            }
         default:
             return state;
     }

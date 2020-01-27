@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import SmurfCard from './smurfCard'
 
 const SmurfList = ({smurfs}) => {
-    console.log(smurfs);
-    console.log(smurfs[0]);
+ 
     return (
         <div>
             {smurfs.length > 0 ? 
